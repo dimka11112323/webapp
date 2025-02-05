@@ -1,23 +1,58 @@
-// Функція для отримання даних з Binance API
-async function getBinanceData(symbol) {
-    const response = await fetch(`https://api.binance.com/api/v3/ticker/price?symbol=${symbol}`);
-    const data = await response.json();
-    return data.price;
+/* Загальні стилі */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #fff; /* Білий фон */
+    color: #000; /* Чорний текст */
 }
 
-// Функція для оновлення цін на сторінці
-async function updatePrices() {
-    const bnbPrice = await getBinanceData("BNBBUSD"); // Замініть на потрібну пару
-    document.getElementById("bnb-price").textContent = bnbPrice;
-
-    const btcPrice = await getBinanceData("BTCBUSD"); // Замініть на потрібну пару
-    document.getElementById("btc-price").textContent = btcPrice;
-
-    // Оновіть ціни для інших криптовалют тут
+/* Шапка сайту */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0; /* Світло-сірий фон */
 }
 
-// Оновлюємо ціни кожні 2 секунди
-setInterval(updatePrices, 2000);
+.logo img {
+    max-height: 40px; /* Максимальна висота логотипу */
+}
 
-// Оновлюємо ціни при завантаженні сторінки
-updatePrices();
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+/* Головний контент */
+main {
+    padding: 20px;
+}
+
+.market-summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.market-summary th, .market-summary td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.news-item {
+    margin-bottom: 20px;
+}
+
+/* Підвал сайту */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0; /* Світло-сірий фон */
+}
