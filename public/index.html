@@ -1,37 +1,69 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebApp</title>
-
-    <!-- Подключение шрифтов с Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Подключение CSS стилей -->
+    <title>Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Добро пожаловать на наш сайт!</h1>
-            <button class="button">Нажми меня</button>
+        <h1>Досліджуйте світ цифрових активів!</h1>
+        <div>
+            <button>Увійти</button>
+            <button>Зареєструватися</button>
         </div>
     </header>
 
-    <section class="content">
-        <div class="card">
-            <h2>Заголовок карточки</h2>
-            <p>Это пример описания карточки. Здесь может быть любой текст или контент.</p>
-        </div>
+    <main>
+        <section id=" ваш список ">
+            <h2>Ваш список</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Монета</th>
+                        <th>Популярні</th>
+                        <th>Капіталізація</th>
+                        <th>Ціна</th>
+                        <th>Зміна 24г</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="bnb.png" alt="BNB логотип">
+                            <span>BNB</span>
+                        </td>
+                        <td>...</td>
+                        <td>...</td>
+                        <td id="bnb-price">Завантаження...</td>
+                        <td id="bnb-change">Завантаження...</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="btc.png" alt="BTC логотип">
+                            <span>Bitcoin</span>
+                        </td>
+                        <td>...</td>
+                        <td>...</td>
+                        <td id="btc-price">Завантаження...</td>
+                        <td id="btc-change">Завантаження...</td>
+                    </tr>
+                    </tbody>
+            </table>
+        </section>
+    </main>
 
-        <div class="card">
-            <h2>Ещё одна карточка</h2>
-            <p>Ещё один пример карточки для отображения информации.</p>
-        </div>
-    </section>
+    <footer>
+        <nav>
+            <a href="#">Ринки</a>
+            <a href="#">Square</a>
+            <a href="#">Торгівля</a>
+            <a href="#">Рекомендації</a>
+            <a href="#">Портфель</a>
+        </nav>
+    </footer>
 
-    <!-- Подключение JavaScript файла -->
     <script src="script.js"></script>
 </body>
 </html>
