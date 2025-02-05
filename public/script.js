@@ -1,58 +1,23 @@
-/* Загальні стилі */
-body {
-    font-family: sans-serif;
-    margin: 0;
-    background-color: #fff; /* Білий фон */
-    color: #000; /* Чорний текст */
+// Функція для отримання даних з API Binance
+async function getBinanceData(symbol) {
+    const response = await fetch(`https://api.binance.com/api/v3/ticker/price?symbol=${symbol}`);
+    const data = await response.json();
+    return data.price;
 }
 
-/* Шапка сайту */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f0f0f0; /* Світло-сірий фон */
+// Функція для оновлення цін на сторінці
+async function updatePrices() {
+    const btcPrice = await getBinanceData("BTCBUSD");
+    document.getElementById("btc-price").textContent = "$" + btcPrice;
+
+    const ethPrice = await getBinanceData("ETHBUSD");
+    document.getElementById("eth-price").textContent = "$" + ethPrice;
+
+    // Додайте оновлення цін для інших криптовалют тут
 }
 
-.logo img {
-    max-height: 40px; /* Максимальна висота логотипу */
-}
+// Оновлюємо ціни кожні 2 секунди
+setInterval(updatePrices, 2000);
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav li {
-    margin-right: 20px;
-}
-
-/* Головний контент */
-main {
-    padding: 20px;
-}
-
-.market-summary table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.market-summary th, .market-summary td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-.news-item {
-    margin-bottom: 20px;
-}
-
-/* Підвал сайту */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #f0f0f0; /* Світло-сірий фон */
-}
+// Оновлюємо ціни при завантаженні сторінки
+updatePrices();
