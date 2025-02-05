@@ -3,67 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Crypto Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Досліджуйте світ цифрових активів!</h1>
-        <div>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Ринки</a></li>
+                <li><a href="#">Торгівля</a></li>
+                <li><a href="#">Гаманець</a></li>
+                <li><a href="#">Ще</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
             <button>Увійти</button>
             <button>Зареєструватися</button>
         </div>
     </header>
-
     <main>
-        <section id=" ваш список ">
-            <h2>Ваш список</h2>
+        <section class="market-summary">
+            <h2>Огляд ринку</h2>
             <table>
                 <thead>
                     <tr>
                         <th>Монета</th>
-                        <th>Популярні</th>
-                        <th>Капіталізація</th>
                         <th>Ціна</th>
-                        <th>Зміна 24г</th>
+                        <th>Зміна за 24 години</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>
-                            <img src="bnb.png" alt="BNB логотип">
-                            <span>BNB</span>
-                        </td>
-                        <td>...</td>
-                        <td>...</td>
-                        <td id="bnb-price">Завантаження...</td>
-                        <td id="bnb-change">Завантаження...</td>
+                        <td>Bitcoin (BTC)</td>
+                        <td id="btc-price">$29,000</td>
+                        <td id="btc-change">+0.5%</td>
                     </tr>
                     <tr>
-                        <td>
-                            <img src="btc.png" alt="BTC логотип">
-                            <span>Bitcoin</span>
-                        </td>
-                        <td>...</td>
-                        <td>...</td>
-                        <td id="btc-price">Завантаження...</td>
-                        <td id="btc-change">Завантаження...</td>
+                        <td>Ethereum (ETH)</td>
+                        <td id="eth-price">$1,800</td>
+                        <td id="eth-change">-0.2%</td>
                     </tr>
                     </tbody>
             </table>
         </section>
+        <section class="news">
+            <h2>Останні новини</h2>
+            <div class="news-item">
+                <h3>Новина 1</h3>
+                <p>Короткий опис новини 1.</p>
+            </div>
+            <div class="news-item">
+                <h3>Новина 2</h3>
+                <p>Короткий опис новини 2.</p>
+            </div>
+            </section>
     </main>
-
     <footer>
-        <nav>
-            <a href="#">Ринки</a>
-            <a href="#">Square</a>
-            <a href="#">Торгівля</a>
-            <a href="#">Рекомендації</a>
-            <a href="#">Портфель</a>
-        </nav>
+        <p>&copy; 2023 Crypto Dashboard</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
